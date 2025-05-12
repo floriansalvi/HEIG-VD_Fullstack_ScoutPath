@@ -12,6 +12,7 @@
     - [Front-end](#front-end-1)
 - [Accès](#-accès)
 - [Api](#-api)
+- [Réalisation](#️-réalisation)
 
 ---
 
@@ -39,9 +40,9 @@ Actuellement, seule une histoire est disponible. Elle est structurée de la mani
 ```
 projet
 ├── back-end/
-├──front-end/
-readme.md
-.gitignore
+├── front-end/
+├── readme.md
+├── .gitignore
 ```
 
 ### Back-end
@@ -67,14 +68,14 @@ readme.md
     - Breeze
 - **Routes**
     - api.php
-    - versionning et préfixes `…/api/v1/…`
+    - Versionning et préfixes `…/api/v1/…`
     - La majorité sont protégées par un middleware `Sanctum`
 
 ### Front-end
 
 - **Framework**
     - Vue.js
-- **Composants**¨
+- **Composants**
     - `Login.vue`
     - `Register.vue`
     - `Story.vue`
@@ -84,7 +85,7 @@ readme.md
 - **Routes**
     - La navigation se fait avec `Vue-router`
 - **Communication avec le back-end**
-    - Les reqêtes HTTP vers l'API se fait avec `Axios`
+    - Les reqêtes HTTP vers l'API se font avec `Axios`
 - **Design**
     - `CSS`
     - Responsive (smartphone, tablet, desktop)
@@ -154,7 +155,7 @@ npm run dev
 - Back-end : [http://localhost:8000](http://localhost:8000)
 - Front-end : [http://localhost:5173](http://localhost:5173)
 
-Le port utilisé par l'application front-end peut être adapté mais cela doit être fait manuellement dans les fichier `/back-end/config/cors.php` et `/back-end/.env`
+Le port utilisé par l'application front-end peut être adapté mais, cela doit être fait manuellement dans les fichiers `/back-end/config/cors.php` et `/back-end/.env`
 
 ---
 
@@ -191,7 +192,7 @@ Le port utilisé par l'application front-end peut être adapté mais cela doit �
 ## 💁🏻‍♂️ Réalisation
 
 **Florian Salvi**
-Haute École de Gestion et d'Ingénierie du Canton de Vaud
-Ingénierie des Médias
-Semestre S4 - 2025
+Haute École de Gestion et d'Ingénierie du Canton de Vaud  
+Ingénierie des Médias  
+Semestre S4 - 2025  
 Classe M52-2
