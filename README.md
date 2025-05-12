@@ -4,7 +4,7 @@
 - [Introduction](#introduction)
 - [Histoire](#histoire)
 - [Architecture](#architecture)
-    -[Back-end](#back-end)
+    - [Back-end](#back-end)
 
 ## 🏁 Introduction
 
@@ -29,29 +29,29 @@ Actuellement, seule une histoire est disponible. Elle est structurée de la mani
 
 ### Back-end
 
-**Framework**
-- Laravel
-**Bases de données**
-- SQLite
-- Structure Eloquent :
-    - User
-    - Story
-    - Chapter
-    - Riddle
-    - Choice
-    - ProgressionLog
-- Construction :
-    - Migrations
-    - Models
-    - Controllers
-    - Seeders
-    - Request
-**Authentification**
-- Breeze
-**Routes**
-- api.php
-- versionning et préfixes (…/api/v1/…)
-- La majorité sont protégées par un middleware (Sanctum)
+- **Framework**
+    - Laravel
+- **Bases de données**
+    - SQLite
+    - Structure Eloquent :
+        - User
+        - Story
+        - Chapter
+        - Riddle
+        - Choice
+        - ProgressionLog
+    - Construction :
+        - Migrations
+        - Models
+        - Controllers
+        - Seeders
+        - Request
+- **Authentification**
+    - Breeze
+- **Routes**
+    - api.php
+    - versionning et préfixes (…/api/v1/…)
+    - La majorité sont protégées par un middleware (Sanctum)
 
 ## Front-end
 
