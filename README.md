@@ -191,7 +191,7 @@ Le port utilisé par l'application front-end peut être adapté mais, cela doit 
 
 ## 💁🏻‍♂️ Réalisation
 
-**Florian Salvi**
+**Florian Salvi**  
 Haute École de Gestion et d'Ingénierie du Canton de Vaud  
 Ingénierie des Médias  
 Semestre S4 - 2025  
