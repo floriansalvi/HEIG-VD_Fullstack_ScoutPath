@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('story_id')->constrained()->onDelete('cascade');
             $table->foreignId('chapter_id')->constrained()->onDelete('cascade');
             $table->foreignId('riddle_id')->constrained()->onDelete('cascade');
-            $table->integer('points');
+            $table->integer('points')->default(0);
             $table->timestamps();
         });
     }

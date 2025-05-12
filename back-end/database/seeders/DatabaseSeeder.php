@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ProgressLog;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,18 +15,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory()->create([
+            'name' => 'John Doe',
+            'email' => 'johndoe@scoutpath.ch',
+            'password' => Hash::make('Heig2025')
+        ]);
 
         $this->call([
             StorySeeder::class,
             ChapterSeeder::class,
             RiddleSeeder::class,
-            ChoiceSeeder::class
-        ]);
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            ChoiceSeeder::class,
+            ProgressLogSeeder::class
         ]);
     }
 }

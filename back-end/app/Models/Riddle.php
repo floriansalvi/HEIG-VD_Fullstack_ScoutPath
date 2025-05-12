@@ -35,4 +35,8 @@ class Riddle extends Model
         'next_riddle_id'
         );
     }
+
+    public function progressionLogs() {
+        return $this->hasMany(ProgressLog::class);
+    }
 }

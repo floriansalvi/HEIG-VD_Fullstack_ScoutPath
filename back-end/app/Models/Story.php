@@ -17,4 +17,8 @@ class Story extends Model
     public function chapters() {
         return $this->hasMany(Chapter::class);
     }
+
+    public function progressionLogs() {
+        return $this->hasMany(ProgressLog::class);
+    }
 }

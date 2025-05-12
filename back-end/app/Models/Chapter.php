@@ -20,8 +20,12 @@ class Chapter extends Model
     {
         return $this->belongsTo(Story::class);
     }
-    
+
     public function riddles() {
         return $this->hasMany(Riddle::class);
+    }
+
+    public function progressionLogs() {
+        return $this->hasMany(ProgressLog::class);
     }
 }
