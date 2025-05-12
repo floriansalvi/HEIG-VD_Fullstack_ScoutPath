@@ -10,6 +10,7 @@
     - [GIT](#git)
     - [Back-end](#back-end-1)
     - [Front-end](#front-end-1)
+    - [Setup](#setup)
 - [Accès](#-accès)
     - [Localhost](#localhost)
     - [Compte](#compte)
@@ -148,6 +149,15 @@ npm install
 
 ```bash
 npm run dev
+```
+
+### Setup
+
+Si tu ne veux pas devoir exécuter ces commandes manuellement, `setup.sh` te permettre d'effectuer toutes ces étapes en 2 commandes.
+
+```bash
+chmod +x setup.sh
+./setup.sh
 ```
 
 ---
