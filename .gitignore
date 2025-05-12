@@ -48,3 +48,6 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# General
+.DS_Store
