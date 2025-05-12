@@ -24,7 +24,15 @@ class Riddle extends Model
         return $this->hasMany(Choice::class);
     }
 
-    public function nextRiddle(){
-        return $this->choices()->whereNotNull('next_riddle_id');
+    public function nextRiddles()
+        {
+        return $this->hasManyThrough(
+        Riddle::class,
+        Choice::class,
+        'riddle_id',        
+        'id',              
+        'id',               
+        'next_riddle_id'
+        );
     }
 }

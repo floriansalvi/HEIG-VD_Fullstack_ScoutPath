@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRiddleRequest extends FormRequest
+class UpdateProgressLogRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,10 +22,9 @@ class StoreRiddleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'required|exists:riddles,id',
-            'title' => 'required|string|min:5|max:64',
-            'description' => 'required|string|max:320',
-            'chapter_id' => 'required|exists:chapters,id'
+            'chapter_id' => 'required|exists:chapters,id,story_id,' . $this->story_id,
+            'riddle_id' => 'required|exists:riddles,id,chapter_id,' . $this->chapter_id,
+            'points' => 'required|integer'
         ];
     }
 }

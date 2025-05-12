@@ -3,55 +3,32 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Models\Story;
-use App\Http\Requests\StoreStoryRequest;
-use App\Http\Requests\UpdateStoryRequest;
 
 
 
 class StoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        return response()->json(Story::all(), 200);
+    public function index(): JsonResponse {
+        $stories = Story::all();
+        return response()->json([
+            'status' => 'success',
+            'data' => $stories
+        ], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreStoryRequest $request)
-    {
-        $story = Story::create($request->validated());
-        return response()->json($story, 201);
-    }
+    public function show(Story $story): JsonResponse {
+        $story->load(['chapters:id,title,description,points_needed,story_id']);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Story $story)
-    {
-        return response()->json($story, 200);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateStoryRequest $request, Story $story)
-    {
-        $story->update($request->validated());
-        return response()->json($story, 200);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Story $story)
-    {
-        $story->delete();
-        return response()->json(['message' => 'L\'histoire a été supprimée.'], 200);
+        return response()->json([
+            'status' => 'success',
+            'data' => [
+                'id' => $story->id,
+                'title' => $story->title,
+                'description' => $story->description,
+                'chapters' => $story->chapters,
+            ]
+        ], 200);
     }
 }
