@@ -9,6 +9,15 @@ class Chapter extends Model
 {
     use HasFactory;
 
+    /**
+     * The Chapter model represents a chapter in a story.
+     * It includes attributes like title, description, points needed, 
+     * and the associated story. The model also defines relationships 
+     * with the Story, Riddle, and ProgressLog models.
+     * 
+     * - Each chapter belongs to a story.
+     * - Each chapter can have many riddles and progression logs.
+     */
     protected $fillable = [
         'title',
         'description',

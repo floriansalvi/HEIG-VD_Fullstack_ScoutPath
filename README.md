@@ -44,8 +44,9 @@ Actuellement, seule une histoire est disponible. Elle est structurée de la mani
 projet
 ├── back-end/
 ├── front-end/
-├── readme.md
+├── README.md
 ├── .gitignore
+├── setup.sh
 ```
 
 ### Back-end

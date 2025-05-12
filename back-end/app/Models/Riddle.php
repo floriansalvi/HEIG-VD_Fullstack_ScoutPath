@@ -9,6 +9,15 @@ class Riddle extends Model
 {
     use HasFactory;
 
+    /**
+     * The Riddle model represents a riddle in a chapter.
+     * It includes attributes like the title, description, and the associated chapter ID.
+     *
+     * - Each riddle belongs to a chapter.
+     * - Each riddle can have many choices associated with it.
+     * - Each riddle can lead to other riddles through the choices (next_riddles).
+     * - Each riddle can have multiple progression logs tracking user progress.
+     */
     protected $fillable = [
         'title',
         'description',

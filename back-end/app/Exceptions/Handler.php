@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class Handler extends ExceptionHandler
 {
     /**
-     * Enregistrer les rapports d'exception.
+     * Report the exception.
      */
     public function report(Throwable $exception)
     {
@@ -18,11 +18,11 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Rendre la réponse pour l'exception donnée.
+     * Render the exception response.
      */
     public function render($request, Throwable $exception)
     {
-        // Gérer l'exception ModelNotFoundException (liée au model binding)
+        // Handle the ModelNotFoundException (related to model binding)
         if ($exception instanceof ModelNotFoundException) {
             if ($request->expectsJson()) {
                 return response()->json([
@@ -30,7 +30,6 @@ class Handler extends ExceptionHandler
                 ], 404);
             }
         }
-
         return parent::render($request, $exception);
     }
 }

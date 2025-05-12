@@ -10,7 +10,10 @@ use App\Models\Riddle;
 class RiddleController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get a list of riddles for a specific chapter.
+     *
+     * @param Chapter $chapter The chapter instance (resolved by route model binding).
+     * @return JsonResponse A JSON response with the riddles of the chapter.
      */
     public function index(Chapter $chapter): JsonResponse {
         
@@ -22,6 +25,12 @@ class RiddleController extends Controller
         ], 200);
     }
 
+    /**
+     * Get details of a specific riddle.
+     *
+     * @param Riddle $riddle The riddle instance (resolved by route model binding).
+     * @return JsonResponse A JSON response with riddle details and choices.
+     */
     public function show(Riddle $riddle): JsonResponse {
         
         $riddle->load(['choices:id,description,points_awarded,riddle_id,next_riddle_id']);

@@ -13,7 +13,10 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * Show the form to edit the user's profile.
+     *
+     * @param Request $request The incoming HTTP request.
+     * @return View The view for the profile edit form.
      */
     public function edit(Request $request): View
     {
@@ -24,6 +27,9 @@ class ProfileController extends Controller
 
     /**
      * Update the user's profile information.
+     *
+     * @param ProfileUpdateRequest $request The validated request data for updating the profile.
+     * @return RedirectResponse A redirect response after the profile is updated.
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -40,6 +46,9 @@ class ProfileController extends Controller
 
     /**
      * Delete the user's account.
+     *
+     * @param Request $request The incoming HTTP request.
+     * @return RedirectResponse A redirect response to the home page after the account is deleted.
      */
     public function destroy(Request $request): RedirectResponse
     {

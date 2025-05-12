@@ -12,9 +12,12 @@ use Illuminate\Http\JsonResponse;
 class ProgressLogController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get a list of progress logs for the authenticated user.
+     *
+     * @param Request $request The incoming HTTP request.
+     * @return JsonResponse A JSON response with the user's progress logs.
      */
-    public function index(Request $request)
+    public function index(Request $request): JsonResponse
     {
         $progressLogs = ProgressLog::where('user_id', $request->user()->id)->get();
 
@@ -25,15 +28,19 @@ class ProgressLogController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new progress log or update an existing one.
+     *
+     * @param StoreProgressLogRequest $request The validated request data for storing progress logs.
+     * @return JsonResponse A JSON response with the created/updated progress log.
      */
-    public function store(StoreProgressLogRequest $request)
+    public function store(StoreProgressLogRequest $request): JsonResponse
     {
         $existingProgressLog = ProgressLog::where('user_id', $request->user()->id)
             ->where('story_id', $request->story_id)
             ->first();
         
         if($existingProgressLog){
+            // Update existing progress log
             $existingProgressLog->update([
                 'chapter_id' => $request->chapter_id,
                 'riddle_id' => $request->riddle_id,
@@ -46,6 +53,7 @@ class ProgressLogController extends Controller
                 'data' => $existingProgressLog
             ], 200);
         } else {
+            // Create new progress log
             $progressLog = ProgressLog::create([
                 'user_id' => $request->user()->id,
                 'story_id' => $request->story_id,
@@ -63,9 +71,13 @@ class ProgressLogController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get the progress log for a specific story.
+     *
+     * @param Request $request The incoming HTTP request.
+     * @param int $storyId The ID of the story.
+     * @return JsonResponse A JSON response with the user's progress for the story.
      */
-    public function show(Request $request, $storyId)
+    public function show(Request $request, $storyId): JsonResponse
     {
         $progressLog = ProgressLog::where('user_id', $request->user()->id)
             ->where('story_id', $storyId)
@@ -85,9 +97,13 @@ class ProgressLogController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete the progress log for a specific story.
+     *
+     * @param Request $request The incoming HTTP request.
+     * @param int $storyId The ID of the story.
+     * @return JsonResponse A JSON response indicating whether the progress log was deleted.
      */
-    public function destroy(Request $request, $storyId)
+    public function destroy(Request $request, $storyId): JsonResponse
     {
         $progressLog = ProgressLog::where('user_id', $request->user()->id)
             ->where('story_id', $storyId)

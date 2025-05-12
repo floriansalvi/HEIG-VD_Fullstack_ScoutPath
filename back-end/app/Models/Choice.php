@@ -9,6 +9,14 @@ class Choice extends Model
 {
     use HasFactory;
 
+    /**
+     * The Choice model represents a choice for a riddle.
+     * It includes attributes like the description of the choice,
+     * points awarded for the choice, the associated riddle, and the next riddle ID.
+     *
+     * - Each choice belongs to a riddle.
+     * - Each choice may lead to another riddle, represented by the next_riddle_id.
+     */
     protected $fillable = [
         'description',
         'points_awarded',

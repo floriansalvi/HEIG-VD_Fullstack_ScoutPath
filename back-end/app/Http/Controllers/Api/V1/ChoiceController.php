@@ -12,10 +12,13 @@ use Illuminate\Http\JsonResponse;
 class ChoiceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get a list of choices for a specific riddle.
+     *
+     * @param Riddle $riddle The riddle instance (resolved by route model binding).
+     * @return JsonResponse A JSON response containing the choices for the riddle.
      */
-    public function index(Riddle $riddle): JsonResponse {
-        
+    public function index(Riddle $riddle): JsonResponse 
+    {  
         $riddle->load(['choices:id,description,points_awarded,riddle_id,next_riddle_id']);
 
         return response()->json([
@@ -24,8 +27,14 @@ class ChoiceController extends Controller
         ], 200);
     }
 
-    public function show(Choice $choice): JsonResponse {
-
+    /**
+     * Get details of a specific choice.
+     *
+     * @param Choice $choice The choice instance (resolved by route model binding).
+     * @return JsonResponse A JSON response containing the details of the choice.
+     */
+    public function show(Choice $choice): JsonResponse
+    {
         return response()->json([
             'status' => 'success',
             'data' => $choice

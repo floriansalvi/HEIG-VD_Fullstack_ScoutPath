@@ -11,10 +11,13 @@ use App\Models\Story;
 class ChapterController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get a list of chapters for a specific story.
+     *
+     * @param Story $story The story instance (resolved by route model binding).
+     * @return JsonResponse A JSON response containing the chapters of the story.
      */
-    public function index(Story $story): JsonResponse {
-        
+    public function index(Story $story): JsonResponse
+    {
         $story->load(['chapters:id,title,description,points_needed,story_id']);
 
         return response()->json([
@@ -23,8 +26,14 @@ class ChapterController extends Controller
         ], 200);
     }
 
-    public function show(Chapter $chapter): JsonResponse {
-        
+    /**
+     * Get details of a specific chapter.
+     *
+     * @param Chapter $chapter The chapter instance (resolved by route model binding).
+     * @return JsonResponse A JSON response containing the details of the chapter.
+     */
+    public function show(Chapter $chapter): JsonResponse
+    {
         $chapter->load(['riddles:id,title,description,chapter_id']);
 
         return response()->json([

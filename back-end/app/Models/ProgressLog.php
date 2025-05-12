@@ -9,6 +9,13 @@ class ProgressLog extends Model
 {
     use HasFactory;
 
+    /**
+     * The ProgressLog model represents a log of user progress in a story.
+     * It includes attributes like the user ID, story ID, chapter ID, riddle ID, and points.
+     *
+     * - Each progress log belongs to a user, story, chapter, and riddle.
+     * - The model also provides a method to find the progress log based on user and story.
+     */
     protected $fillable = [
         'user_id',
         'story_id',
