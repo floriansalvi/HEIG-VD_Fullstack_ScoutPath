@@ -11,6 +11,8 @@
     - [Back-end](#back-end-1)
     - [Front-end](#front-end-1)
 - [Accès](#-accès)
+    - [Localhost](#localhost)
+    - [Compte](#compte)
 - [Api](#-api)
 - [Réalisation](#️-réalisation)
 
@@ -152,10 +154,22 @@ npm run dev
 
 ## 🌐 Accès
 
+### Localhost
+
 - Back-end : [http://localhost:8000](http://localhost:8000)
 - Front-end : [http://localhost:5173](http://localhost:5173)
 
 Le port utilisé par l'application front-end peut être adapté mais, cela doit être fait manuellement dans les fichiers `/back-end/config/cors.php` et `/back-end/.env`
+
+### Compte
+
+Voici les informations d'identification du compte déjà crée lors de l'initialisation du projet.
+
+```
+Nom : John Doe
+Email : johndoe@scoutpath.ch
+Mot de passe : Heig2025
+```
 
 ---
 
