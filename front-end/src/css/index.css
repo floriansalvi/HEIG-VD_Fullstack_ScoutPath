@@ -1,0 +1,12 @@
+/* Import the package normalize.css */
+@import 'normalize.css';
+
+/* Import the different css style sheets */
+@import 'variables.css';
+@import 'typography.css';
+@import 'structure.css';
+
+* {
+    text-decoration: none;
+    list-style: none;
+}

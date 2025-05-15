@@ -1,0 +1,30 @@
+:root {
+    /* Colors */
+    --color-accent: #4c2039;
+    --color-accent-light: #734f64;
+
+    --color-black: #111111;
+    --color-grey: #878787;
+    --color-white: #fdfdfd;
+
+    /* Font */
+    --font-family-display: 'Avenir Next', 'Avenir', sans-serif;
+    --font-family-txt: 'Avenir Next', 'Avenir', sans-serif;
+
+    --font-size-base: 16px;
+
+    --font-weight-standard: 400;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing--xs: 8;
+    --spacing--s: 16;
+    --spacing--m: 24;
+    --spacing--l: 32;
+    --spacing--xl: 48;
+    
+    /* Radius */
+    --radius--s: 4;
+    --radius--m: 8;
+    --radius--l: 16;
+}

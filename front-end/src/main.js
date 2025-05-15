@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
-import './style.css'
+import router from './router'
+import axiosClient from './axios'
 import App from './App.vue'
+import './css/index.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.config.globalProperties.$http = axiosClient;
+app.mount('#app')

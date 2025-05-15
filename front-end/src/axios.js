@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const instance = axios.create({
+const axiosClient = axios.create({
     baseURL: 'http://localhost:8000',
     withCredentials: true,
     headers: {
@@ -8,7 +8,7 @@ const instance = axios.create({
     },
 })
 
-instance.interceptors.request.use((config) => {
+axiosClient.interceptors.request.use((config) => {
     const xsrfToken = document.cookie
       .split('; ')
       .find((row) => row.startsWith('XSRF-TOKEN='))
@@ -21,4 +21,4 @@ instance.interceptors.request.use((config) => {
     return config
   })
   
-  export default instance
+  export default axiosClient
