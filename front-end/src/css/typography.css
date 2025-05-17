@@ -1,5 +1,5 @@
 /* Standard sizes (desktop )*/
-p, a {
+p, a, button, input {
     font-family: var(--font-family-txt);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-standard)
@@ -44,6 +44,10 @@ a {
     &:hover {
         color: var(--color-accent-light);
     }
+}
+
+.error {
+    color: #FF0010;
 }
 
 /* Sizes for tablet */

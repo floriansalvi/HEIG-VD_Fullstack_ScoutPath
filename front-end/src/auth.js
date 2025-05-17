@@ -15,6 +15,12 @@ async function fetchUser() {
     }
 }
 
+async function login(email, password) {
+    await axiosClient.get('/sanctum/csrf-cookie')
+    await axiosClient.post('/login', { email, password })
+    await fetchUser()
+}
+
 async function logout() {
     await axiosClient.post('/logout')
     user.value = null
@@ -25,5 +31,6 @@ export default {
     user,
     isAuthenticated,
     fetchUser,
+    login,
     logout
 }

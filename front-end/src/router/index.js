@@ -5,6 +5,7 @@ import App from "../App.vue"
 import Home from "../views/Home.vue"
 import Login from "../views/Login.vue"
 import Register from "../views/Register.vue"
+import Story from "../views/Story.vue"
 
 const routes = [
     {
@@ -23,6 +24,18 @@ const routes = [
         name : 'Sign up',
         component : Register,
         meta : { guestOnly : true }
+    },
+    {
+        path: '/stories/:id',
+        name: 'StoryDetail',
+        component: Story,
+        meta : { requiresAuth : true },
+        props: true
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        redirect: '/'
     }
 ]
 

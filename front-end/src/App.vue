@@ -1,4 +1,9 @@
+<script setup>
+import { RouterView } from 'vue-router';
+import TheHeader from './components/TheHeader.vue';
+</script>
+
 <template>
-  <h1>Slayance</h1>
-  <router-view></router-view>
+  <TheHeader></TheHeader>
+  <RouterView />
 </template>

@@ -7,4 +7,5 @@ import './css/index.css'
 const app = createApp(App)
 app.use(router)
 app.config.globalProperties.$http = axiosClient;
+app.provide('$http', axiosClient)
 app.mount('#app')

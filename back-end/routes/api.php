@@ -13,7 +13,7 @@ use App\Http\Controllers\Api\V1\ChoiceController;
 use App\Http\Controllers\Api\V1\ProgressLogController;
 
 // Register a new user (create account)
-Route::post('/register',[RegisteredUserController::class, 'store']);
+Route::post('/register',[RegisteredUserController::class, 'store'])->middleware('auth:sanctum');
 
 // Log in an existing user (start session)
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
@@ -31,7 +31,13 @@ Route::prefix('v1')->group(function(){
     // Public route to get all stories
     Route::get('/stories', [StoryController::class, 'index']);
 
-    Route::get('test/riddles/{riddle}/choices', [ChoiceController::class, 'index']);
+    // TEST POSTMAN
+    Route::get('test/stories/{story}', [StoryController::class, 'show']);
+    Route::get('test/chapters/{chapter}', [ChapterController::class, 'show']);
+    Route::get('test/riddles/{riddle}', [ChoiceController::class, 'index']);
+    Route::get('test/progress/{storyId}', [ProgressLogController::class, 'show']);
+
+    //
 
      // Group of routes that require user to be authenticated (using Sanctum)
     Route::middleware('auth:sanctum')->group(function(){

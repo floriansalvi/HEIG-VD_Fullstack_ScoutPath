@@ -7,6 +7,9 @@
 @import 'structure.css';
 
 * {
+    box-sizing: border-box;
+    margin: 0;
     text-decoration: none;
     list-style: none;
+    line-height: 1;
 }

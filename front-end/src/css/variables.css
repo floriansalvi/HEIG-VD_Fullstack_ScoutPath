@@ -2,6 +2,7 @@
     /* Colors */
     --color-accent: #4c2039;
     --color-accent-light: #734f64;
+    --color-accent-dark: #1a0a14;
 
     --color-black: #111111;
     --color-grey: #878787;
@@ -17,14 +18,14 @@
     --font-weight-bold: 700;
 
     /* Spacing */
-    --spacing--xs: 8;
-    --spacing--s: 16;
-    --spacing--m: 24;
-    --spacing--l: 32;
-    --spacing--xl: 48;
+    --spacing-xs: .5rem;
+    --spacing-s: 1rem;
+    --spacing-m: 1.5rem;
+    --spacing-l: 2rem;
+    --spacing-xl: 3rem;
     
     /* Radius */
-    --radius--s: 4;
-    --radius--m: 8;
-    --radius--l: 16;
+    --radius-s: 4px;
+    --radius-m: 8px;
+    --radius-l: 16px;
 }
