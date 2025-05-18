@@ -41,6 +41,8 @@ class RiddleController extends Controller
                 'id' => $riddle->id,
                 'title' => $riddle->title,
                 'description' => $riddle->description,
+                'chapter_id' => $riddle->chapter_id,
+                'story_id' => $riddle->chapter->story_id,
                 'choices' => $riddle->choices,
             ]
         ], 200);

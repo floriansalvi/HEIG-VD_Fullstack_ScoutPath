@@ -24,7 +24,6 @@ class StoreProgressLogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|exists:users,id',
             'story_id' => 'required|exists:stories,id',
             'chapter_id' => 'required|exists:chapters,id,story_id,' . $this->story_id,
             'riddle_id' => 'required|exists:riddles,id,chapter_id,' . $this->chapter_id,
