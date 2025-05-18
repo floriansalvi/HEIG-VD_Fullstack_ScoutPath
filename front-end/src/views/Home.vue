@@ -13,7 +13,10 @@ const stories = ref([])
 const error = ref(null)
 
 
-
+/**
+ * Fetch all stories from the API
+ * @returns {Promise<void>}
+ */
 const fetchStories = async () => {
   await withLoading(async () => {
     try {
@@ -34,7 +37,10 @@ onMounted(() => {
   <div v-if="!loading && !error" class="container">
     <h2>Histoires</h2>
     <div class="stories-grid">
-      <BaseStoryCard v-for="story in stories" :key="story.id" :story="story"/>
+      <BaseStoryCard v-for="story in stories"
+        :key="story.id"
+        :story="story"
+      />
     </div>
     <div v-if="error">{{ error }}</div>
   </div>
@@ -54,4 +60,15 @@ onMounted(() => {
   gap: var(--spacing-xl);
 }
 
+@media (max-width: 1024px) {
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

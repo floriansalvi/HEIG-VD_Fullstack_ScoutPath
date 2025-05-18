@@ -1,6 +1,10 @@
 <script setup>
 import { defineProps } from 'vue';
 
+/**
+ * Props definition for the component.
+ * @prop {Object} story - The story object passed from the parent.
+ */
 const props = defineProps({
     story: Object
 })

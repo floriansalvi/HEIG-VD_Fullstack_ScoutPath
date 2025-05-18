@@ -3,9 +3,20 @@ import auth from '../auth';
 import { onMounted, ref, computed } from 'vue';
 import router from '../router';
 
+/**
+ * Computed property to check if the user is authenticated.
+ * @returns {boolean}
+ */
 const isAuthenticated = computed(() => !!auth.user.value)
+
 const loggingOut = ref(false)
 
+/**
+ * Handles user logout:
+ * - Calls auth.logout() to clear user data and tokens.
+ * - Redirects to the login page.
+ * @returns {Promise<void>}
+ */
 const logout = async () => {
     loggingOut.value = true
     await auth.logout();
@@ -13,6 +24,11 @@ const logout = async () => {
     loggingOut.value = false
 }
 
+/**
+ * Fetches the current authenticated user when the component is mounted.
+ * Typically used to sync UI state with backend session.
+ * @returns {Promise<void>}
+ */
 onMounted(async () => {
     await auth.fetchUser()
 })

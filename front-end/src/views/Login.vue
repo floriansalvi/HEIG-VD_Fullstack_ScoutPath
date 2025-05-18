@@ -8,6 +8,12 @@ const password = ref('')
 const error = ref('')
 const loggingIn = ref(false)
 
+/**
+ * Attempts to login the user using credentials.
+ * On success, redirects to home page.
+ * On failure, sets an appropriate error message.
+ * @returns {Promise<void>}
+ */
 const login = async () => {
     loggingIn.value = true
     try {
